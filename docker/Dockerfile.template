@@ -1,0 +1,4 @@
+FROM @ORIGIN@/k8s-sup-bootstrap
+ARG pkg_ident
+ENV MY_PKG_IDENT $pkg_ident
+ENTRYPOINT env && /hab/pkgs/$MY_PKG_IDENT/bin/sup-bootstrap-init

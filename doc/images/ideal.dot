@@ -1,0 +1,17 @@
+digraph statefulset {
+   pod_3 [label="redis-deployment-4126230041-15mjl", shape=rect];
+   pod_4 [label="redis-deployment-4126230041-6fcxn", shape=rect];
+   pod_5 [label="redis-deployment-4126230041-s9fs4", shape=rect];
+   replica_set_0 [label="redis-deployment-4126230041", shape=rect, style=filled, fillcolor=red];
+   replica_set_0 -> pod_3;
+   replica_set_0 -> pod_4;
+   replica_set_0 -> pod_5;
+   service2 [label="redis-master", shape=rect, style=filled, fillcolor=green];
+   service3 [label="redis-slave", shape=rect, style=filled, fillcolor=green];
+   deployment0 [label="redis-deployment", shape=rect, style=filled, fillcolor=yellow];
+   deployment0 -> replica_set_0;
+
+   pod_3 -> service2;
+   pod_4 -> service3;
+   pod_5 -> service3;
+ }
