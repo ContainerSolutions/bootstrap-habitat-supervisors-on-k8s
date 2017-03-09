@@ -59,6 +59,11 @@ all IP addresses that are resolved by the service IP.
 
 
 # Usage
-```
-kubectl apply -f bootstrap-hab-sup-on-k8s.yml
-```
+To test it out on minikube:
+
+1. Start minikube `minikube start`
+2. Set your `ORIGIN` env var: `export ORIGIN=my_origin`
+3. Run the `build-bootstrap.sh` script. 
+4. Import the container in minikube: 
+    `docker save $ORIGIN/k8s-sup-bootstrap-init | (eval $(minikube docker-env); docker load)`
+5. Apply the manifest: `kubectl apply -f bootstrap-hab-sup-on-k8s.yml`
