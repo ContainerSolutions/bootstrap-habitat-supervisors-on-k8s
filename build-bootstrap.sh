@@ -4,7 +4,7 @@ set -e
 
 cd k8s-hab-sup-bootstrap
 echo "buillding & upoading"
-#time hab pkg build -R . 
+time hab pkg build -R . 
 
 pkg_ident=$(cat results/last_build.env | grep "pkg_ident" | awk -F '=' ' { print $2 }')
 
