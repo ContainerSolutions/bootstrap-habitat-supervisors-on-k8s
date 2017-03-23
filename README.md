@@ -69,7 +69,8 @@ You need to have `habitat`, `docker`, `minikube` and `kubectl` installed.
 3. Run the `build-bootstrap.sh` script.
 4. Import the container in minikube:
     `docker save $ORIGIN/k8s-sup-bootstrap-init | (eval $(minikube docker-env); docker load)`
-5. Apply the manifest: `kubectl apply -f bootstrap-hab-sup-on-k8s.yml`
+5. Modify the `bootstrap-hab-sup-on-k8s.yml` manifest to have your package origin. Replace all occurances of `moretea` with your habitat origin name.
+6. Apply the manifest: `kubectl apply -f bootstrap-hab-sup-on-k8s.yml`
 
 #### Verifying that it works properly
 
