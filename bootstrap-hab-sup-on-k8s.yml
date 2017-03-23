@@ -37,6 +37,12 @@ spec:
         image: moretea/k8s-sup-bootstrap-init
         imagePullPolicy: Never
         env:
+         - name: HAB_PACKAGE_NAME
+           value: moretea/k8s-sup-bootstrap
+         - name: SERVICE_NAME
+           value: hab-bootstrap
+         - name: STATEFULSET_NAME
+           value: hab-sup-bootstrap-set
          - name: POD_IP
            valueFrom:
              fieldRef:

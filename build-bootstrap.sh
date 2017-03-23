@@ -5,11 +5,10 @@ set -e
 cd k8s-hab-sup-bootstrap
 echo "buillding & upoading"
 time hab pkg build -R . 
-
-pkg_ident=$(cat results/last_build.env | grep "pkg_ident" | awk -F '=' ' { print $2 }')
+. results/last_build.env # Make the $pkg_ident (and other vars) available.
 
 # Export it to docker, and load it into minikube
-#time sudo hab studio run hab pkg export docker $pkg_ident
+time sudo hab studio run hab pkg export docker $pkg_ident
 
 cd ..
 
