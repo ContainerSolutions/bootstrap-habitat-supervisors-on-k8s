@@ -62,7 +62,7 @@ all IP addresses that are resolved by the service IP.
 ## Just running this on top of k8s using pre-build images:
 
 1. Start minikube
-2. Apply the manifest containing the pre-build images: `kubectl apply -f bootstrap-hab-sup-on-k8s-local.yml`
+2. Apply the manifest containing the pre-build images: `kubectl apply -f https://raw.githubusercontent.com/ContainerSolutions/bootstrap-habitat-supervisors-on-k8s/master/bootstrap-hab-sup-on-k8s.yml`
 
 ## From scratch
 ### Prerequisites
