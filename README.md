@@ -59,7 +59,13 @@ all IP addresses that are resolved by the service IP.
 
 
 # Usage
-#### Prerequisites
+## Just running this on top of k8s using pre-build images:
+
+1. Start minikube
+2. Apply the manifest containing the pre-build images: `kubectl apply -f bootstrap-hab-sup-on-k8s-local.yml`
+
+## From scratch
+### Prerequisites
 You need to have `habitat`, `docker`, `minikube` and `kubectl` installed.
 
 #### To test it out on minikube:
@@ -70,7 +76,7 @@ You need to have `habitat`, `docker`, `minikube` and `kubectl` installed.
 4. Import the container in minikube:
     `docker save $ORIGIN/k8s-sup-bootstrap-init | (eval $(minikube docker-env); docker load)`
 5. Modify the `bootstrap-hab-sup-on-k8s.yml` manifest to have your package origin. Replace all occurances of `moretea` with your habitat origin name.
-6. Apply the manifest: `kubectl apply -f bootstrap-hab-sup-on-k8s.yml`
+6. Apply the manifest: `kubectl apply -f bootstrap-hab-sup-on-k8s-local.yml`
 
 #### Verifying that it works properly
 

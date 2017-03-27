@@ -35,6 +35,7 @@ spec:
       containers:
       - name: sup-bootstrap
         image: moretea/k8s-sup-bootstrap-init
+        imagePullPolicy: Never
         env:
          - name: HAB_PACKAGE_NAME
            value: moretea/k8s-sup-bootstrap
